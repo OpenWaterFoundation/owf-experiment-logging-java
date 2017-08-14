@@ -37,7 +37,7 @@ Logback is intended as a successor to the popular log4j project. It builds upon 
 Under the [pom.xml](https://github.com/OpenWaterFoundation/owf-experiment-logging-java/blob/master/SLF4J-Logging/pom.xml) file, uncomment the section that reads binding for logback. Make sure that the logback.xml file is under the src/main/resources folder.
 
 ## java.util.logging
-What is java.util.logging?
+### What is java.util.logging?
 A Java logging framework is a computer data logging package for the Java platform. Logging refers to the recording of activity. Logging is a common issue for development teams. Several frameworks ease and standardize the process of logging for the Java platform.
 
 Under the [pom.xml](https://github.com/OpenWaterFoundation/owf-experiment-logging-java/blob/master/SLF4J-Logging/pom.xml) file, uncomment the section that reads binding for JDK14 (java.util.logging). Make sure that the logging.properties file is under the src/main/resources folder. Then in the run configuration options make sure to add the following code in the VM arguments section, select apply and then run.
