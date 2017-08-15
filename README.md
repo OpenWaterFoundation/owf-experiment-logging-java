@@ -51,3 +51,4 @@ A Java logging framework is a computer data logging package for the Java platfor
 -Djava.util.logging.config.file=src/main/resources/logging.properties
 
 [Configuration Documentation](http://tutorials.jenkov.com/java-logging/configuration.html)
+[Filehandler Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/logging/FileHandler.html)
