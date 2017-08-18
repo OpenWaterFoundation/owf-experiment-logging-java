@@ -1,8 +1,9 @@
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class SLF4J {
+public class JDK14Logger {
 	
-	private static Logger logger = LoggerFactory.getLogger(SLF4J.class);
+	private static Logger logger = LoggerFactory.getLogger(JDK14Logger.class);
 	
 	public static int add(int a, int b)
 	{
