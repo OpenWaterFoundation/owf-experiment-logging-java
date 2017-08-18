@@ -13,6 +13,15 @@ Open Water Foundation experiment to understand different Java logging frameworks
 > git clone https://github.com/OpenWaterFoundation/owf-experiment-logging-java.git
 ```
 
+### Eclipse Import Project Steps:
+1.) File --> Import
+2.) Git --> Projects from Git
+3.) Clone URI (https://github.com/OpenWaterFoundation/owf-experiment-logging-java.git)
+4.) Next
+5.) Next
+6.) Import existing Eclipse projects
+7.) Finish
+
 The repository contains an Eclipse project made up of a single java class.
 
 Within this README will be four different sections explaining how to properly run the java class with each logging framework.
