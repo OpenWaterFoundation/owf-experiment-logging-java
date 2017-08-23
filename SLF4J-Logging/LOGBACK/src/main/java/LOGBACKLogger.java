@@ -15,17 +15,25 @@ public class LOGBACKLogger {
 	}
 	
 	public static void main( String[] args )
-    {																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									
-		logger.info("Entering Main");
-		logger.debug("add(1,2) returned {}",add(1,2));
-        
-        logger.trace("This is a TRACE Message!");
-		logger.debug("This is a DEBUG Message!");
-		logger.error("This is an ERROR Message!");
-		logger.info("This is an INFO Message!");
-		logger.warn("This is a WARN Message!");
-		
-        logger.info("Exiting Main");
+    {
+		try {
+			while (true) {
+				logger.info("MaxMemory=" + Math.random() + " TotalMemory=" + Math.random() + " FreeMemory=" + Math.random() + " AvailableProcessor=" + Math.random());
+				Thread.sleep(5 * 1000);
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+//		logger.info("Entering Main");
+//		logger.debug("add(1,2) returned {}",add(1,2));
+//        
+//        logger.trace("This is a TRACE Message!");
+//		logger.debug("This is a DEBUG Message!");
+//		logger.error("This is an ERROR Message!");
+//		logger.info("This is an INFO Message!");
+//		logger.warn("This is a WARN Message!");
+//		
+//        logger.info("Exiting Main");
     }
 
 }

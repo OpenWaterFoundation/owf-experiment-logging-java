@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="DEBUG">
 	<Properties>
-		<Property name="log-path">C:/logs/</Property>
+		<Property name="log-path">C:/Users/intern3/Desktop/logs/</Property>
 	</Properties>
 	<Appenders>
 		<RollingFile name="RollingFile" fileName="${log-path}/myexample.log"
-			filePattern="${log-path}/myexample-%d{yyyy-MM-dd}-%i.log">
+			filePattern="${log-path}/myexample-%i.log">
 			<PatternLayout>
-				<pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
+				<pattern>%d{dd-MMM-yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
 			</PatternLayout>
 			<Policies>
-				<SizeBasedTriggeringPolicy size="1 KB" />
+				<SizeBasedTriggeringPolicy size="100 KB" />
 			</Policies>
 			<DefaultRolloverStrategy max="4" />
 		</RollingFile>
