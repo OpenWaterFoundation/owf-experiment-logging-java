@@ -1,7 +1,10 @@
 # owf-experiment-logging-java
-Open Water Foundation experiment to understand different Java logging frameworks
+
+Open Water Foundation experiment to understand different Java logging frameworks.
 
 ## Getting Started
+
+### Setup Folders and Clone Repository
 
 The following steps can be used to initialize a development environment,
 in this case following conventions at the Open Water Foundation.
@@ -18,31 +21,40 @@ in this case following conventions at the Open Water Foundation.
 > git clone https://github.com/OpenWaterFoundation/owf-experiment-logging-java.git
 ```
 
-### Eclipse Import Project Steps:
+### Eclipse Import Project Steps
 
 The following steps can be used to create an Eclipse workspace
 with project for Java logging code.
 
-1. Start Eclipse.  Run a familiar version and see the run script in `build-util`.
+1. Start Eclipse.  Run an installed version.  The run script in `build-util` can be used if using standard OWF conventions.
 2. Create a workspace by using the ***Browse*** button,
 for example the `Experiment-Java-Logging/eclipse-workspace` folder,
 which will not be committed to the repository.
-2. ***File / Import***
-3. Git --> Projects from Git
-4. Clone URI (https://github.com/OpenWaterFoundation/owf-experiment-logging-java.git)
+2. ***File / Import...***
+3. Because the projects were originally created using Maven,
+use: ***Maven / Existing Maven Projects*** and ***Next***.
+4. Use the ***Browse*** button in the ***Import Maven Projects*** dialog to
+select the top-level `SLF4J-Logging` folder and then select all projects that are listed.
 5. Next
 6. Next
 7. Import existing Eclipse projects
 8. Finish
 
-The repository contains an Eclipse project made up of a single java class.
+The repository contains an Eclipse project made up of a single Java class.
 
-Within this README will be four different sections explaining how to properly run the java class with each logging framework.
+Within this README will be four different sections explaining how to properly run the Java class with each logging framework.
 
 ## SLF4J
 
 ### What is SLF4j?
-Simple Logging Facade for Java (SLF4J) provides a Java logging API by means of a simple facade pattern. The underlying logging backend is determined at runtime by adding the desired binding to the classpath and may be the standard Sun Java logging package java.util.logging, log4j, logback or tinylog. The separation of the client API from the logging backend reduces the coupling between an application and any particular logging framework. This can make it easier to integrate with existing or third-party code or to deliver code into other projects that have already made a choice of logging backend.
+
+Simple Logging Facade for Java (SLF4J) provides a Java logging API by means of a simple facade pattern.
+The underlying logging backend is determined at runtime by adding the desired binding to the classpath
+and may be the standard Sun Java logging package `java.util.logging`,
+`log4j`, `logback` or `tinylog`.
+The separation of the client API from the logging backend reduces the coupling between an application and any particular logging framework. 
+This can make it easier to integrate with existing or third-party code or to deliver code
+into other projects that have already made a choice of logging backend.
 
 Enable the SLF4J framework in a Java application as follows:
 
@@ -56,9 +68,9 @@ Refer to the below pom.xml to see dependency:
 
 * [pom.xml](https://github.com/OpenWaterFoundation/owf-experiment-logging-java/blob/master/SLF4J-Logging/SLF4J/pom.xml)
 
-2. Write logging messages using the SLF4J API
+2. Write logging messages using the SLF4J API.
 
-3. Run the program as a Java Application
+3. Run the program as a Java Application.
 
 4. Advanced: Add the following code to the VM arguments in the Run Configurations in order to set what log level will be printed to the console:
 ```
@@ -73,8 +85,13 @@ This can be set to one of the following:
 * FATAL (the most serious)
 
 ## Log4j2
+
 ### What is Log4j2?
-Log4j2 is a reliable, fast and flexible logging framework (APIs) written in Java, which is distributed under the Apache Software License. Log4j is a popular logging package written in Java. Log4j has been ported to the C, C++, C#, and Perl, Python, Ruby, and Eiffel languages.
+
+Log4j2 is a reliable, fast and flexible logging framework (APIs) written in Java,
+which is distributed under the Apache Software License.
+Log4j is a popular logging package written in Java.
+Log4j has been ported to the C, C++, C#, and Perl, Python, Ruby, and Eiffel languages.
 
 Enable the Log4j2 framework in a Java application as follows:
 
@@ -133,16 +150,22 @@ Refer to the below pom.xml to see dependency:
 ```
 **NOTE:** This file should live under the path: src/main/resources. This is important because the LOG4J2 logger looks for a configuration file here by default.
 
-3. Write logging messages using the SLF4J API
+3. Write logging messages using the SLF4J API.
 
-4. Run the program as a Java Application
+4. Run the program as a Java Application:
 
 * [PatternLayout Documentation](https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html)
 * [Configuration Documentation](https://logging.apache.org/log4j/2.0/manual/configuration.html)
 
 ## Logback
+
 ### What is Logback?
-Logback is intended as a successor to the popular log4j project. It builds upon a decade of experience gained in designing industrial-strength logging systems. The resulting product, i.e. logback, is faster and has a smaller footprint than all existing logging systems, sometimes by a wide margin. Just as importantly, logback offers unique and rather useful features missing in other logging systems.
+
+Logback is intended as a successor to the popular log4j project.
+It builds upon a decade of experience gained in designing industrial-strength logging systems.
+The resulting product, i.e. logback, is faster and has a smaller footprint than all existing logging systems,
+sometimes by a wide margin. Just as importantly,
+logback offers unique and rather useful features missing in other logging systems.
 
 Enable the Logback framework in a Java application as follows:
 
@@ -210,17 +233,23 @@ Refer to the below pom.xml to see dependency:
     </root>
 </configuration>
 ```
-**NOTE:** This file should live under the path: src/main/resources. This is important because the Logback logger looks for a configuration file here by default.
+**NOTE:** This file should live under the path: src/main/resources.
+This is important because the Logback logger looks for a configuration file here by default.
 
-3. Write logging messages using the SLF4J API
+3. Write logging messages using the SLF4J API.
 
-4. Run the program as a Java Application
+4. Run the program as a Java Application.
 
 [Configuration Documentation](https://logback.qos.ch/manual/configuration.html)
 
 ## java.util.logging
+
 ### What is java.util.logging?
-A Java logging framework is a computer data logging package for the Java platform. Logging refers to the recording of activity. Logging is a common issue for development teams. Several frameworks ease and standardize the process of logging for the Java platform.
+
+A Java logging framework is a computer data logging package for the Java platform.
+Logging refers to the recording of activity.
+Logging is a common issue for development teams.
+Several frameworks ease and standardize the process of logging for the Java platform.
 
 Enable the java.util.logging framework in a Java application as follows:
 
@@ -233,7 +262,9 @@ Refer to the below pom.xml to see dependency:
 
 * [pom.xml](https://github.com/OpenWaterFoundation/owf-experiment-logging-java/blob/master/SLF4J-Logging/JDK14/pom.xml)
 
-2. Create a configuration file to control behavior of logging including levels, files and formatting. The following example rotates the log file through a sequence of 4 files, each capped at 1KB.
+2. Create a configuration file to control behavior of logging including levels, files and formatting.
+The following example rotates the log file through a sequence of 4 files, 
+each capped at 1KB.
 
 ```
 handlers=java.util.logging.FileHandler, java.util.logging.ConsoleHandler
@@ -255,13 +286,13 @@ java.util.logging.FileHandler.formatter=java.util.logging.SimpleFormatter
 
 .level=INFO
 ```
-3.) In the Run Configuration under the VM Arguments add the following piece of code:
+3. In the Run Configuration under the VM Arguments add the following:
 ```
 -Djava.util.logging.config.file=src/main/resources/logging.properties
 ```
-This specifies where the logging.properties file lives so the java.util.logging logger knows what logging configuration file to use.
+This specifies where the logging.properties file lives so the `java.util.logging` logger knows what logging configuration file to use.
 
-4.) Run the program as a Java Applicaiton
+4. Run the program as a Java Application:
 
 * [Configuration Documentation](http://tutorials.jenkov.com/java-logging/configuration.html)
 * [Filehandler Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/logging/FileHandler.html)
