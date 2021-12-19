@@ -3,24 +3,37 @@ Open Water Foundation experiment to understand different Java logging frameworks
 
 ## Getting Started
 
+The following steps can be used to initialize a development environment,
+in this case following conventions at the Open Water Foundation.
+
 ```
 > C:
 > cd \Users\user
-> mkdir Experiment-Logging
-> cd Experiment-Logging
+> mkdir owf-dev
+> cd owf-dev
+> mkdir Experiment-Java-Logging
+> cd Experiment-Java-Logging
 > mkdir git-repos
 > cd git-repos
 > git clone https://github.com/OpenWaterFoundation/owf-experiment-logging-java.git
 ```
 
 ### Eclipse Import Project Steps:
-* 1.) File --> Import
-* 2.) Git --> Projects from Git
-* 3.) Clone URI (https://github.com/OpenWaterFoundation/owf-experiment-logging-java.git)
-* 4.) Next
-* 5.) Next
-* 6.) Import existing Eclipse projects
-* 7.) Finish
+
+The following steps can be used to create an Eclipse workspace
+with project for Java logging code.
+
+1. Start Eclipse.  Run a familiar version and see the run script in `build-util`.
+2. Create a workspace by using the ***Browse*** button,
+for example the `Experiment-Java-Logging/eclipse-workspace` folder,
+which will not be committed to the repository.
+2. ***File / Import***
+3. Git --> Projects from Git
+4. Clone URI (https://github.com/OpenWaterFoundation/owf-experiment-logging-java.git)
+5. Next
+6. Next
+7. Import existing Eclipse projects
+8. Finish
 
 The repository contains an Eclipse project made up of a single java class.
 
@@ -33,7 +46,7 @@ Simple Logging Facade for Java (SLF4J) provides a Java logging API by means of a
 
 Enable the SLF4J framework in a Java application as follows:
 
-1.) Include the following Maven dependencies, which will provide jar files to the application:
+1. Include the following Maven dependencies, which will provide jar files to the application:
 
 **(Use the latest stable version. Do Not use the alpha versions. Make sure to use the same version for both dependencies.)**
 * [SLF4J-API](https://mvnrepository.com/artifact/org.slf4j/slf4j-api)
@@ -43,11 +56,11 @@ Refer to the below pom.xml to see dependency:
 
 * [pom.xml](https://github.com/OpenWaterFoundation/owf-experiment-logging-java/blob/master/SLF4J-Logging/SLF4J/pom.xml)
 
-2.) Write logging messages using the SLF4J API
+2. Write logging messages using the SLF4J API
 
-3.) Run the program as a Java Application
+3. Run the program as a Java Application
 
-4.) Advanced: Add the following code to the VM arguments in the Run Configurations in order to set what log level will be printed to the console:
+4. Advanced: Add the following code to the VM arguments in the Run Configurations in order to set what log level will be printed to the console:
 ```
 -Dorg.slf4j.simpleLogger.defaultLogLevel=DEBUG
 ```
@@ -65,7 +78,7 @@ Log4j2 is a reliable, fast and flexible logging framework (APIs) written in Java
 
 Enable the Log4j2 framework in a Java application as follows:
 
-1.) Include the following Maven dependencies, which will provide jar files to the application:
+1. Include the following Maven dependencies, which will provide jar files to the application:
 
 **(Use the latest stable version. Make sure to use the same version for both dependencies.)**
 
@@ -76,7 +89,7 @@ Refer to the below pom.xml to see dependency:
 
 * [pom.xml](https://github.com/OpenWaterFoundation/owf-experiment-logging-java/blob/master/SLF4J-Logging/LOG4J2/pom.xml)
 
-2.) Create a configuration file to control behavior of logging including levels, files and formatting. The following example rotates the log file through a sequence of 4 files, each capped at 1 KB.
+2. Create a configuration file to control behavior of logging including levels, files and formatting. The following example rotates the log file through a sequence of 4 files, each capped at 1 KB.
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="DEBUG">
@@ -120,9 +133,9 @@ Refer to the below pom.xml to see dependency:
 ```
 **NOTE:** This file should live under the path: src/main/resources. This is important because the LOG4J2 logger looks for a configuration file here by default.
 
-3.) Write logging messages using the SLF4J API
+3. Write logging messages using the SLF4J API
 
-4.) Run the program as a Java Application
+4. Run the program as a Java Application
 
 * [PatternLayout Documentation](https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html)
 * [Configuration Documentation](https://logging.apache.org/log4j/2.0/manual/configuration.html)
@@ -133,7 +146,7 @@ Logback is intended as a successor to the popular log4j project. It builds upon 
 
 Enable the Logback framework in a Java application as follows:
 
-1.) Include the following Maven dependencies, which will provide jar files to the application:
+1. Include the following Maven dependencies, which will provide jar files to the application:
 
 **(Use the latest stable version. Make sure to use the same version for both dependencies.)**
 
@@ -144,7 +157,7 @@ Refer to the below pom.xml to see dependency:
 
 * [pom.xml](https://github.com/OpenWaterFoundation/owf-experiment-logging-java/blob/master/SLF4J-Logging/LOGBACK/pom.xml)
 
-2.) Create a configuration file to control behavior of logging including levels, files and formatting. The following example rotates the log file through a sequence of 30 days worth of files, each capped at 5MB.
+2. Create a configuration file to control behavior of logging including levels, files and formatting. The following example rotates the log file through a sequence of 30 days worth of files, each capped at 5MB.
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true">
@@ -199,9 +212,9 @@ Refer to the below pom.xml to see dependency:
 ```
 **NOTE:** This file should live under the path: src/main/resources. This is important because the Logback logger looks for a configuration file here by default.
 
-3.) Write logging messages using the SLF4J API
+3. Write logging messages using the SLF4J API
 
-4.) Run the program as a Java Application
+4. Run the program as a Java Application
 
 [Configuration Documentation](https://logback.qos.ch/manual/configuration.html)
 
@@ -211,7 +224,7 @@ A Java logging framework is a computer data logging package for the Java platfor
 
 Enable the java.util.logging framework in a Java application as follows:
 
-1.) Include the following Maven dependencies, which will provide jar files to the application:
+1. Include the following Maven dependencies, which will provide jar files to the application:
 
 **(Use the latest stable version. Do Not use the alpha versions. Make sure to use the same version as the SLF4J-API dependency.)**
 * [SLF4J-JDK14](https://mvnrepository.com/artifact/org.slf4j/slf4j-jdk14)
@@ -220,7 +233,7 @@ Refer to the below pom.xml to see dependency:
 
 * [pom.xml](https://github.com/OpenWaterFoundation/owf-experiment-logging-java/blob/master/SLF4J-Logging/JDK14/pom.xml)
 
-2.) Create a configuration file to control behavior of logging including levels, files and formatting. The following example rotates the log file through a sequence of 4 files, each capped at 1KB.
+2. Create a configuration file to control behavior of logging including levels, files and formatting. The following example rotates the log file through a sequence of 4 files, each capped at 1KB.
 
 ```
 handlers=java.util.logging.FileHandler, java.util.logging.ConsoleHandler
